@@ -1,12 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import WebFont from 'webfontloader';
 
-import {
-  getQuantity,
-  getRotationDegrees,
-  isCustomFont,
-  makeClassKey,
-} from '../../utils';
+import { getQuantity, getRotationDegrees, isCustomFont } from '../../utils';
 import { roulettePointer } from '../common/images';
 import {
   RotationContainer,
@@ -106,7 +101,7 @@ export const Wheel = ({
   const [isFontLoaded, setIsFontLoaded] = useState(false);
   const mustStopSpinning = useRef<boolean>(false);
 
-  const classKey = makeClassKey(5);
+  const classKey = 'wheel-key';
 
   const normalizedSpinDuration = Math.max(0.01, spinDuration);
 
@@ -234,7 +229,7 @@ export const Wheel = ({
       if (mustStopSpinning.current) {
         mustStopSpinning.current = false;
         // setHasStartedSpinning(false);
-        setHasStoppedSpinning(true);
+        // setHasStoppedSpinning(true);
         onStopSpinning();
       }
     }, totalSpinningTime);
