@@ -233,7 +233,7 @@ export const Wheel = ({
     setTimeout(() => {
       if (mustStopSpinning.current) {
         mustStopSpinning.current = false;
-        setHasStartedSpinning(false);
+        // setHasStartedSpinning(false);
         setHasStoppedSpinning(true);
         onStopSpinning();
       }
